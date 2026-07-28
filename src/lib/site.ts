@@ -9,7 +9,7 @@ export const siteConfig = {
   description:
     "Automotora en Puerto Montt con vehículos seleccionados, opciones de financiamiento, recepción de vehículos en parte de pago y atención personalizada.",
   mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Automotora+Prime+Puerto+Montt",
+    "https://www.google.com/maps?cid=17984474611621098947",
   mapsEmbedUrl:
     "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1sAutomotora+Prime+Puerto+Montt!6i15!3m1!1ses!5m1!1ses",
   instagramUrl: "https://www.instagram.com/automotoraprime/",

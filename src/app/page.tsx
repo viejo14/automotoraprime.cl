@@ -63,6 +63,27 @@ const categories = [
   },
 ];
 
+const googleReviews = [
+  {
+    author: "Noel Oviedo",
+    date: "Hace un año",
+    summary:
+      "Destaca una atención amable y una experiencia positiva al resolver sus dudas antes de comprar.",
+  },
+  {
+    author: "Lorena Coronado",
+    date: "Hace un año",
+    summary:
+      "Valora el acompañamiento de principio a fin, la orientación constante y la confianza durante el proceso.",
+  },
+  {
+    author: "Francisco Campos",
+    date: "Hace 4 días",
+    summary:
+      "Señala que recibió respuesta incluso fuera del horario para resolver detalles menores de su Nissan Versa 2022.",
+  },
+];
+
 const process = [
   {
     step: "Conversemos",
@@ -354,6 +375,92 @@ export default function Home() {
                 />
               </div>
             </aside>
+          </div>
+        </section>
+
+        <section
+          className="section reviews"
+          aria-labelledby="reviews-title"
+        >
+          <div className="container">
+            <div className="reviews__heading">
+              <div className="reviews__google-badge">
+                <Image
+                  src="/google-logo.webp"
+                  alt=""
+                  width={30}
+                  height={30}
+                  aria-hidden="true"
+                />
+                <span>Calificación pública en Google</span>
+                <strong>4,5 / 5</strong>
+                <span
+                  className="reviews__aggregate-stars"
+                  role="img"
+                  aria-label="4,5 de 5 estrellas"
+                />
+              </div>
+              <p className="eyebrow">Experiencias de clientes</p>
+              <h2 id="reviews-title">
+                Opiniones reales sobre Automotora Prime.
+              </h2>
+              <p className="reviews__intro">
+                La ficha pública registra 8 opiniones. Seleccionamos tres
+                experiencias de cinco estrellas y resumimos sus comentarios
+                para facilitar la lectura.
+              </p>
+            </div>
+
+            <div className="reviews__grid">
+              {googleReviews.map((review) => (
+                <article className="review-card" key={review.author}>
+                  <div className="review-card__top">
+                    <span
+                      className="review-card__stars"
+                      role="img"
+                      aria-label="5 de 5 estrellas"
+                    >
+                      <span aria-hidden="true">★★★★★</span>
+                    </span>
+                    <Image
+                      src="/google-logo.webp"
+                      alt="Google"
+                      width={24}
+                      height={24}
+                    />
+                  </div>
+                  <p>{review.summary}</p>
+                  <div className="review-card__author">
+                    <strong>{review.author}</strong>
+                    <span>{review.date}</span>
+                    <small>Reseña pública · 5/5</small>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="reviews__action">
+              <a
+                className="button button--dark"
+                href={siteConfig.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src="/google-logo.webp"
+                  alt=""
+                  width={21}
+                  height={21}
+                  aria-hidden="true"
+                />
+                Ver las 8 opiniones en Google Maps
+                <span aria-hidden="true">↗</span>
+              </a>
+              <p>
+                La puntuación y el número de opiniones pueden cambiar en
+                Google.
+              </p>
+            </div>
           </div>
         </section>
 
