@@ -229,6 +229,114 @@ export default function Home() {
         </section>
 
         <section
+          className="section social-live"
+          id="comunidad"
+          aria-labelledby="community-title"
+        >
+          <div className="container">
+            <div className="section-heading social-live__heading">
+              <div>
+                <p className="eyebrow">Comunidad Prime</p>
+                <h2 id="community-title">Lo último, directo desde nuestras redes.</h2>
+              </div>
+              <p>
+                Revisa vehículos recién publicados, novedades y oportunidades
+                reales. Este contenido se actualiza desde nuestros perfiles
+                oficiales de Instagram y Facebook.
+              </p>
+            </div>
+
+            <div className="social-feed-grid">
+              <article className="social-feed-card social-feed-card--instagram">
+                <div className="social-feed-card__header">
+                  <div>
+                    <span className="social-feed-card__platform">
+                      Instagram
+                    </span>
+                    <h3>@automotoraprime</h3>
+                  </div>
+                  <span className="live-status">
+                    <span aria-hidden="true" /> Contenido en vivo
+                  </span>
+                </div>
+                <div className="social-feed-card__frame">
+                  <iframe
+                    src={siteConfig.instagramEmbedUrl}
+                    title="Últimas publicaciones de Automotora Prime en Instagram"
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allow="encrypted-media; picture-in-picture; web-share"
+                  />
+                </div>
+                <div className="social-feed-card__footer">
+                  <p>Publicaciones servidas directamente por Instagram.</p>
+                  <a
+                    href={siteConfig.instagramUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Abrir perfil <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </article>
+
+              <article className="social-feed-card social-feed-card--facebook">
+                <div className="social-feed-card__header">
+                  <div>
+                    <span className="social-feed-card__platform">Facebook</span>
+                    <h3>Automotora Prime</h3>
+                  </div>
+                  <span className="live-status">
+                    <span aria-hidden="true" /> Contenido en vivo
+                  </span>
+                </div>
+                <div className="social-feed-card__frame">
+                  <iframe
+                    src={siteConfig.facebookEmbedUrl}
+                    title="Últimas publicaciones de Automotora Prime en Facebook"
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allow="encrypted-media; picture-in-picture; web-share"
+                  />
+                </div>
+                <div className="social-feed-card__footer">
+                  <p>Actividad servida directamente por Facebook.</p>
+                  <a
+                    href={siteConfig.facebookUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Abrir página <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <aside
+              className="social-reputation"
+              aria-label="Opiniones de Automotora Prime en Google"
+            >
+              <div>
+                <span>Google Maps · Opiniones públicas</span>
+                <h3>La confianza también se comprueba.</h3>
+              </div>
+              <p>
+                Conoce las calificaciones y experiencias compartidas por
+                nuestros clientes antes de visitarnos.
+              </p>
+              <a
+                className="button button--primary"
+                href={siteConfig.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver opiniones <span aria-hidden="true">↗</span>
+              </a>
+            </aside>
+          </div>
+        </section>
+
+        <section
           className="section section--navy"
           id="vehiculos"
           aria-labelledby="vehicles-title"
@@ -344,60 +452,6 @@ export default function Home() {
         </section>
 
         <section
-          className="section social-proof"
-          id="comunidad"
-          aria-labelledby="community-title"
-        >
-          <div className="container social-proof__grid">
-            <div className="social-proof__intro">
-              <p className="eyebrow">Comunidad Prime</p>
-              <h2 id="community-title">Más cerca, también en redes.</h2>
-              <p>
-                Sigue nuestros ingresos, novedades y oportunidades. En
-                Instagram y Facebook puedes conocer el movimiento diario de
-                Automotora Prime y escribirnos directamente.
-              </p>
-              <div className="social-links">
-                <a
-                  href={siteConfig.instagramUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Instagram <span aria-hidden="true">↗</span>
-                </a>
-                <a
-                  href={siteConfig.facebookUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Facebook <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-
-            <aside className="reputation-card" aria-label="Opiniones en Google">
-              <p className="reputation-card__label">
-                Google Maps · Opiniones públicas
-              </p>
-              <h3>La confianza se comprueba.</h3>
-              <p>
-                Revisa las calificaciones y experiencias compartidas por
-                nuestros clientes antes de visitarnos.
-              </p>
-              <a
-                className="text-link"
-                href={siteConfig.mapsUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Ver opiniones en Google Maps{" "}
-                <span aria-hidden="true">↗</span>
-              </a>
-            </aside>
-          </div>
-        </section>
-
-        <section
           className="section section--faq"
           id="preguntas"
           aria-labelledby="faq-title"
@@ -467,6 +521,36 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <a
+        className="whatsapp-float"
+        href={siteConfig.whatsappUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Conversar con Automotora Prime por WhatsApp"
+      >
+        <span className="whatsapp-float__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path
+              d="M20 11.55a8 8 0 0 1-11.86 7L4 19.65l1.1-4.03A8 8 0 1 1 20 11.55Z"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M8.45 7.9c.18-.39.37-.4.64-.41h.54c.17 0 .36.06.45.3l.7 1.7c.08.2.04.37-.08.54l-.53.69c-.13.16-.1.32-.03.45.38.69.88 1.3 1.48 1.8.57.5 1.22.9 1.94 1.18.17.06.3.04.42-.1l.72-.85c.16-.2.34-.2.56-.12l1.63.77c.23.11.38.17.43.29.05.12.05.7-.16 1.18-.2.48-1.2.93-1.65.99-.43.06-.98.1-1.58-.1-.37-.12-.84-.27-1.44-.53a9.1 9.1 0 0 1-3.55-3.1c-.23-.3-1.44-1.91-1.44-3.64 0-.62.17-.96.25-1.04Z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        <span className="whatsapp-float__copy">
+          <strong>WhatsApp</strong>
+          <small>
+            <span aria-hidden="true" /> Conversemos
+          </small>
+        </span>
+      </a>
 
       <footer className="footer">
         <div className="container footer__top">
