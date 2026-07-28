@@ -28,14 +28,38 @@ const categories = [
   {
     title: "SUV",
     description: "Espacio, comodidad y seguridad para cada recorrido.",
+    image:
+      "https://images.unsplash.com/photo-1522846931861-69b7a5f8ab83?auto=format&fit=crop&w=1400&q=85",
+    alt: "SUV circulando por una carretera de montaña",
+    credit: "Timothy Chan",
+    creditUrl: "https://unsplash.com/photos/cjsIdOYNn60",
   },
   {
     title: "Pick-ups",
     description: "Capacidad y resistencia para trabajo o aventura.",
+    image:
+      "https://images.unsplash.com/photo-1700568633148-3332745b7a85?auto=format&fit=crop&w=1400&q=85",
+    alt: "Pick-up azul circulando por un camino entre árboles",
+    credit: "Luke Miller",
+    creditUrl: "https://unsplash.com/photos/KR7QVdfMUoE",
   },
   {
     title: "City cars",
     description: "Eficiencia y agilidad para moverte todos los días.",
+    image:
+      "https://images.unsplash.com/photo-1626334418764-5a27cd70b7e6?auto=format&fit=crop&w=1400&q=85",
+    alt: "City car azul estacionado junto a una pared clara",
+    credit: "Martin Katler",
+    creditUrl: "https://unsplash.com/photos/WLDeXZqn9TM",
+  },
+  {
+    title: "Sedanes",
+    description: "Confort, presencia y equilibrio para viajar mejor.",
+    image:
+      "https://images.unsplash.com/photo-1535815593759-6a2f6897a1ac?auto=format&fit=crop&w=1400&q=85",
+    alt: "Sedán oscuro circulando por una carretera al atardecer",
+    credit: "Hayes Potter",
+    creditUrl: "https://unsplash.com/photos/1cgAXEzomgc",
   },
 ];
 
@@ -76,7 +100,7 @@ const faqs = [
   {
     question: "¿Cómo puedo consultar por un vehículo?",
     answer:
-      "Puedes escribir directamente a nuestro correo de atención indicando el tipo de vehículo que buscas, presupuesto estimado y si tienes un automóvil para entregar.",
+      "Puedes escribirnos directamente por WhatsApp indicando el tipo de vehículo que buscas, presupuesto estimado y si tienes un automóvil para entregar.",
   },
   {
     question: "¿La atención requiere reserva?",
@@ -97,6 +121,9 @@ const structuredData = {
       logo: `${siteConfig.url}/icon.svg`,
       description: siteConfig.description,
       email: siteConfig.email,
+      telephone: siteConfig.phone,
+      hasMap: siteConfig.mapsUrl,
+      sameAs: [siteConfig.instagramUrl, siteConfig.facebookUrl],
       address: {
         "@type": "PostalAddress",
         addressLocality: "Puerto Montt",
@@ -123,9 +150,7 @@ const structuredData = {
 };
 
 export default function Home() {
-  const quoteLink = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
-    "Cotización de vehículo — Automotora Prime",
-  )}`;
+  const quoteLink = siteConfig.whatsappUrl;
 
   return (
     <>
@@ -223,16 +248,32 @@ export default function Home() {
             <div className="category-grid">
               {categories.map((category, index) => (
                 <article className="category-card" key={category.title}>
-                  <span className="category-card__index">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
+                  <Image
+                    className="category-card__image"
+                    src={category.image}
+                    alt={category.alt}
+                    fill
+                    sizes="(max-width: 960px) 100vw, 50vw"
+                  />
+                  <div className="category-card__scrim" />
+                  <div className="category-card__top">
+                    <span className="category-card__index">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <a
+                      className="category-card__credit"
+                      href={category.creditUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Fotografía de ${category.credit} en Unsplash`}
+                    >
+                      Foto: {category.credit}
+                    </a>
+                  </div>
+                  <div className="category-card__content">
                     <h3>{category.title}</h3>
                     <p>{category.description}</p>
                   </div>
-                  <span className="category-card__arrow" aria-hidden="true">
-                    ↗
-                  </span>
                 </article>
               ))}
             </div>
@@ -303,6 +344,60 @@ export default function Home() {
         </section>
 
         <section
+          className="section social-proof"
+          id="comunidad"
+          aria-labelledby="community-title"
+        >
+          <div className="container social-proof__grid">
+            <div className="social-proof__intro">
+              <p className="eyebrow">Comunidad Prime</p>
+              <h2 id="community-title">Más cerca, también en redes.</h2>
+              <p>
+                Sigue nuestros ingresos, novedades y oportunidades. En
+                Instagram y Facebook puedes conocer el movimiento diario de
+                Automotora Prime y escribirnos directamente.
+              </p>
+              <div className="social-links">
+                <a
+                  href={siteConfig.instagramUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Instagram <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href={siteConfig.facebookUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Facebook <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <aside className="reputation-card" aria-label="Opiniones en Google">
+              <p className="reputation-card__label">
+                Google Maps · Opiniones públicas
+              </p>
+              <h3>La confianza se comprueba.</h3>
+              <p>
+                Revisa las calificaciones y experiencias compartidas por
+                nuestros clientes antes de visitarnos.
+              </p>
+              <a
+                className="text-link"
+                href={siteConfig.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver opiniones en Google Maps{" "}
+                <span aria-hidden="true">↗</span>
+              </a>
+            </aside>
+          </div>
+        </section>
+
+        <section
           className="section section--faq"
           id="preguntas"
           aria-labelledby="faq-title"
@@ -344,13 +439,17 @@ export default function Home() {
                 atención personalizada en Puerto Montt.
               </p>
               <a className="button button--primary" href={quoteLink}>
-                Solicitar asesoría <span aria-hidden="true">→</span>
+                Escribir por WhatsApp <span aria-hidden="true">→</span>
               </a>
             </div>
             <address className="contact-card">
               <div>
                 <span>Ubicación</span>
                 <p>Puerto Montt, Región de Los Lagos</p>
+              </div>
+              <div>
+                <span>Teléfono y WhatsApp</span>
+                <a href={siteConfig.phoneHref}>{siteConfig.phone}</a>
               </div>
               <div>
                 <span>Correo</span>
@@ -381,6 +480,20 @@ export default function Home() {
             <a href="#servicios">Servicios</a>
             <a href="#nosotros">Nosotros</a>
             <a href="#contacto">Contacto</a>
+            <a
+              href={siteConfig.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
+            <a
+              href={siteConfig.facebookUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Facebook
+            </a>
           </nav>
         </div>
         <div className="container footer__bottom">

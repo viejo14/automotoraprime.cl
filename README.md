@@ -53,10 +53,11 @@ Los datos editables de la empresa están centralizados en `src/lib/site.ts`.
 Antes de producción se debe confirmar:
 
 - correo comercial;
-- teléfono y WhatsApp;
 - dirección exacta;
 - horarios;
-- enlaces de redes sociales.
+
+El teléfono, WhatsApp y los perfiles sociales se centralizan en el mismo
+archivo y actualmente corresponden a la información pública de la empresa.
 
 ## SEO incluido
 
