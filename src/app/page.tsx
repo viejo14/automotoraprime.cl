@@ -29,10 +29,10 @@ const categories = [
     title: "SUV",
     description: "Espacio, comodidad y seguridad para cada recorrido.",
     image:
-      "https://images.unsplash.com/photo-1522846931861-69b7a5f8ab83?auto=format&fit=crop&w=1400&q=85",
-    alt: "SUV circulando por una carretera de montaña",
-    credit: "Timothy Chan",
-    creditUrl: "https://unsplash.com/photos/cjsIdOYNn60",
+      "https://images.unsplash.com/photo-1617469767053-d3b523a0b982?q=80&w=1231&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt: "SUV gris estacionado frente a un entorno arbolado",
+    credit: "Unsplash",
+    creditUrl: "https://unsplash.com/",
   },
   {
     title: "Pick-ups",
@@ -313,25 +313,46 @@ export default function Home() {
             </div>
 
             <aside
-              className="social-reputation"
-              aria-label="Opiniones de Automotora Prime en Google"
+              className="google-presence"
+              aria-labelledby="google-presence-title"
             >
-              <div>
-                <span>Google Maps · Opiniones públicas</span>
-                <h3>La confianza también se comprueba.</h3>
+              <div className="google-presence__content">
+                <div className="google-presence__brand">
+                  <span className="google-presence__logo">
+                    <Image
+                      src="/google-logo.webp"
+                      alt="Google"
+                      width={52}
+                      height={52}
+                    />
+                  </span>
+                  <span>Google Maps · Información pública</span>
+                </div>
+                <h3 id="google-presence-title">
+                  Encuéntranos y revisa nuestra reputación.
+                </h3>
+                <p>
+                  Explora nuestra ubicación, consulta las calificaciones y
+                  conoce las experiencias compartidas por nuestros clientes.
+                </p>
+                <a
+                  className="button button--primary"
+                  href={siteConfig.mapsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ver ficha y opiniones <span aria-hidden="true">↗</span>
+                </a>
               </div>
-              <p>
-                Conoce las calificaciones y experiencias compartidas por
-                nuestros clientes antes de visitarnos.
-              </p>
-              <a
-                className="button button--primary"
-                href={siteConfig.mapsUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Ver opiniones <span aria-hidden="true">↗</span>
-              </a>
+              <div className="google-presence__map">
+                <iframe
+                  src={siteConfig.mapsEmbedUrl}
+                  title="Ubicación de Automotora Prime en Google Maps"
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
             </aside>
           </div>
         </section>
@@ -585,6 +606,24 @@ export default function Home() {
             © {new Date().getFullYear()} Automotora Prime. Todos los derechos
             reservados.
           </p>
+          <a
+            className="footer__credit"
+            href={siteConfig.syrtixUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Sitio web creado por Syrtix"
+          >
+            <span>Sitio creado por</span>
+            <span className="footer__credit-logo">
+              <Image
+                src="/syrtix-logo-256.png"
+                alt="Syrtix"
+                width={48}
+                height={27}
+              />
+            </span>
+            <strong>Syrtix.com</strong>
+          </a>
           <p>Puerto Montt · Chile</p>
         </div>
       </footer>
