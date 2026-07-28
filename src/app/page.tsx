@@ -38,28 +38,28 @@ const categories = [
     title: "Pick-ups",
     description: "Capacidad y resistencia para trabajo o aventura.",
     image:
-      "https://images.unsplash.com/photo-1700568633148-3332745b7a85?auto=format&fit=crop&w=1400&q=85",
-    alt: "Pick-up azul circulando por un camino entre árboles",
-    credit: "Luke Miller",
-    creditUrl: "https://unsplash.com/photos/KR7QVdfMUoE",
+      "https://images.unsplash.com/photo-1571986929789-95307bbfa7c2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt: "Pick-up gris estacionada frente a un paisaje montañoso",
+    credit: "Unsplash",
+    creditUrl: "https://unsplash.com/",
   },
   {
     title: "City cars",
     description: "Eficiencia y agilidad para moverte todos los días.",
     image:
-      "https://images.unsplash.com/photo-1626334418764-5a27cd70b7e6?auto=format&fit=crop&w=1400&q=85",
-    alt: "City car azul estacionado junto a una pared clara",
-    credit: "Martin Katler",
-    creditUrl: "https://unsplash.com/photos/WLDeXZqn9TM",
+      "https://images.unsplash.com/photo-1699862335489-36f7dec55c0e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt: "City car azul en un circuito automovilístico",
+    credit: "Unsplash",
+    creditUrl: "https://unsplash.com/",
   },
   {
     title: "Sedanes",
     description: "Confort, presencia y equilibrio para viajar mejor.",
     image:
-      "https://images.unsplash.com/photo-1535815593759-6a2f6897a1ac?auto=format&fit=crop&w=1400&q=85",
-    alt: "Sedán oscuro circulando por una carretera al atardecer",
-    credit: "Hayes Potter",
-    creditUrl: "https://unsplash.com/photos/1cgAXEzomgc",
+      "https://images.unsplash.com/photo-1711978477980-a0f1a05039a0?q=80&w=1180&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt: "Sedán blanco estacionado visto desde el frente",
+    credit: "Unsplash",
+    creditUrl: "https://unsplash.com/",
   },
 ];
 
