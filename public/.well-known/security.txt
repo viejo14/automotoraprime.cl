@@ -1,4 +1,0 @@
-Contact: mailto:contacto@automotoraprime.cl
-Expires: 2027-07-27T23:59:59.000Z
-Preferred-Languages: es, en
-Canonical: https://automotoraprime.cl/.well-known/security.txt
